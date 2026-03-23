@@ -1,0 +1,57 @@
+---
+const photos = [
+  {
+    src: "https://images.unsplash.com/photo-1621605815971-fbc98d665033?q=80&w=1000&auto=format&fit=crop",
+    alt: "Corte masculino clásico",
+    class: "md:col-span-2 md:row-span-2 aspect-square md:aspect-auto h-full"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1560066984-138dadb4c035?q=80&w=1000&auto=format&fit=crop",
+    alt: "Estilizado femenino",
+    class: "aspect-square"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1582095133179-bfd08e2fc6b3?q=80&w=1000&auto=format&fit=crop",
+    alt: "Diseño de barba",
+    class: "aspect-square"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?q=80&w=1000&auto=format&fit=crop",
+    alt: "Coloración femenina",
+    class: "aspect-square"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1000&auto=format&fit=crop",
+    alt: "Interior del salón",
+    class: "aspect-square"
+  },
+  {
+    src: "https://images.unsplash.com/photo-1516975080661-46bbf2020e53?q=80&w=1000&auto=format&fit=crop",
+    alt: "Herramientas de estética",
+    class: "md:col-span-2 aspect-[2/1] md:aspect-auto"
+  }
+];
+---
+
+<section id="galeria" class="py-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-5xl font-bold mb-4">Nuestro Trabajo</h2>
+      <p class="text-gray-600 text-lg">Un vistazo a lo que hacemos todos los días en Barbería JR.</p>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px] md:auto-rows-[250px]">
+      {photos.map(photo => (
+        <div class={`overflow-hidden rounded-2xl group relative ${photo.class}`}>
+          <div class="absolute inset-0 bg-black/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10 rounded-2xl"></div>
+          <img 
+            src={photo.src} 
+            alt={photo.alt} 
+            class="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-700 ease-in-out"
+            loading="lazy"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,24 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", sans-serif;
+  --font-heading: "Outfit", sans-serif;
+
+  --color-primary-dark: #1f2937; /* Masculine slate/charcoal */
+  --color-primary-light: #fdf8f5; /* Feminine soft sand/blush */
+  --color-accent-gold: #d4af37;
+  --color-accent-blue: #0ea5e9;
+  --color-accent-rose: #f43f5e;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply font-sans text-gray-800 bg-white antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading text-primary-dark;
+  }
+}

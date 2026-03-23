@@ -1,0 +1,23 @@
+---
+interface Props {
+  href: string;
+  variant?: 'his' | 'hers' | 'primary' | 'outline' | 'whatsapp';
+  class?: string;
+}
+
+const { href, variant = 'primary', class: className = '' } = Astro.props;
+
+const baseStyles = "inline-flex items-center justify-center px-6 py-3.5 rounded-full font-medium transition-all duration-300 shadow-sm hover:shadow-md active:scale-95";
+
+const variants = {
+  his: "bg-primary-dark text-white hover:bg-gray-800 ring-1 ring-primary-dark/20",
+  hers: "bg-primary-light text-primary-dark hover:bg-[#f5ece6] ring-1 ring-primary-dark/10",
+  primary: "bg-primary-dark text-white hover:bg-gray-800",
+  outline: "bg-transparent text-primary-dark ring-2 ring-primary-dark hover:bg-gray-50",
+  whatsapp: "bg-[#25D366] text-white hover:bg-[#20bd5a] shadow-lg shadow-[#25D366]/30",
+};
+---
+
+<a href={href} class={`${baseStyles} ${variants[variant]} ${className}`}>
+  <slot />
+</a>

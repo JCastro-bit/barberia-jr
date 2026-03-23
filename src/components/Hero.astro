@@ -1,0 +1,61 @@
+---
+import Button from './Button.astro';
+import Badge from './Badge.astro';
+---
+
+<section class="relative min-h-[90vh] flex items-center justify-center pt-20 pb-16 overflow-hidden">
+  <!-- Background Image with Overlay -->
+  <div class="absolute inset-0 z-0">
+    <img 
+      src="https://images.unsplash.com/photo-1635273051930-b97ac092f6ce?q=80&w=2670&auto=format&fit=crop" 
+      alt="Interior de Barbería y Salón" 
+      class="w-full h-full object-cover object-center"
+    />
+    <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/70"></div>
+  </div>
+
+  <!-- Content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center text-white">
+    <!-- Reviews Badge -->
+    <div class="mb-8 animate-fade-in-up">
+      <Badge class="!bg-white/10 !ring-white/20 !text-white [&_span]:!text-white" />
+    </div>
+
+    <!-- Main Headings -->
+    <h1 class="text-5xl md:text-7xl lg:text-8xl font-black tracking-tight mb-4 drop-shadow-lg">
+      BARBERÍA JR
+    </h1>
+    <h2 class="text-2xl md:text-4xl font-light tracking-wide mb-6 text-primary-light">
+      Salón y Estética Unisex
+    </h2>
+    <p class="text-lg md:text-xl font-medium text-gray-300 tracking-widest uppercase mb-12">
+      Para él y para ella · Guadalajara
+    </p>
+
+    <!-- CTAs -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-6">
+      <Button href="https://wa.me/523314130235?text=Hola,%20quiero%20agendar%20una%20cita%20para%20hombre%20en%20Barber%C3%ADa%20JR" variant="his" class="w-full sm:w-auto text-lg px-8 py-4">
+        Agenda para Él
+      </Button>
+      <Button href="https://wa.me/523314130235?text=Hola,%20quiero%20agendar%20una%20cita%20para%20mujer%20en%20Barber%C3%ADa%20JR" variant="hers" class="w-full sm:w-auto text-lg px-8 py-4">
+        Agenda para Ella
+      </Button>
+    </div>
+  </div>
+</section>
+
+<style>
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .animate-fade-in-up {
+    animation: fade-in-up 0.8s ease-out forwards;
+  }
+</style>
